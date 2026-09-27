@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-size="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alliance Care Group | Care shaped around you</title>
+<meta name="description" content="Alliance Care Group supports people with learning disabilities, autism, physical disabilities and other disabilities, including supported living, to live the life they choose.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alliance Care Group | Care shaped around you">
+<meta property="og:description" content="Care and supported living for people with learning disabilities, autism, physical disabilities and other disabilities.">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+  /* ---------- Design tokens ---------- */
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f1f8f8;
+    --hero-bg: #e4f2f2;
+    --text: #1d4a54;
+    --text-soft: #45676f;
+    --line: #cfe4e6;
+    --field-line: #5d8790;
+    --link: #1a6f7c;
+    --btn-bg: #267a87;
+    --btn-text: #ffffff;
+    --accent: #f5b880;
+    --on-accent: #1d4a54;
+    --band: #dcefef;
+    --on-band: #1d4a54;
+    --on-band-soft: #45676f;
+    --focus: #1d4a54;
+    --field: #ffffff;
+    --c1: #d7ecee;
+    --c2: #fbe3c4;
+    --c3: #b5dade;
+    --c4: #fde0d0;
+    --on-c: #1d4a54;
+    --shadow: rgba(29, 74, 84, .16);
+    --display: 'Bricolage Grotesque', 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --body: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #08202a;
+      --bg-alt: #0e303c;
+      --hero-bg: #103f4d;
+      --text: #ecf8fa;
+      --text-soft: #bfdde2;
+      --line: #27596a;
+      --field-line: #6fa0aa;
+      --link: #8fdde8;
+      --btn-bg: #f5b880;
+      --btn-text: #1d4a54;
+      --band: #0b2b36;
+      --on-band: #ecf8fa;
+      --on-band-soft: #bfdde2;
+      --focus: #f5b880;
+      --field: #08202a;
+      --on-c: #1d4a54;
+      --shadow: rgba(0, 0, 0, .4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #08202a;
+    --bg-alt: #0e303c;
+    --hero-bg: #103f4d;
+    --text: #ecf8fa;
+    --text-soft: #bfdde2;
+    --line: #27596a;
+    --field-line: #6fa0aa;
+    --link: #8fdde8;
+    --btn-bg: #f5b880;
+    --btn-text: #1d4a54;
+    --band: #0b2b36;
+    --on-band: #ecf8fa;
+    --on-band-soft: #bfdde2;
+    --focus: #f5b880;
+    --field: #08202a;
+    --on-c: #1d4a54;
+    --shadow: rgba(0, 0, 0, .4);
+  }
+  :root[data-theme="contrast"] {
+    --field-line: #ffffff;
+    --shadow: transparent;
+    --hero-bg: #000000;
+    --bg: #000000;
+    --bg-alt: #000000;
+    --text: #ffffff;
+    --text-soft: #ffffff;
+    --line: #ffffff;
+    --link: #7df9ff;
+    --btn-bg: #ffeb00;
+    --btn-text: #000000;
+    --accent: #ffeb00;
+    --on-accent: #000000;
+    --band: #000000;
+    --on-band: #ffffff;
+    --on-band-soft: #ffffff;
+    --focus: #ffeb00;
+    --field: #000000;
+    --c1: #ffeb00;
+    --c2: #00ffff;
+    --c3: #ff9ff3;
+    --c4: #ffffff;
+    --on-c: #000000;
+    --shadow: #000000;
+  }
+
+  html { font-size: 100%; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 5.5rem); scroll-behavior: smooth; height: 100%; }
+  html[data-size="2"] { font-size: 118%; }
+  html[data-size="3"] { font-size: 136%; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1.1; letter-spacing: -0.015em; font-weight: 600; }
+  h1 { font-size: clamp(2.9rem, 7.2vw, 5.4rem); letter-spacing: -0.03em; line-height: 0.98; }
+  h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); }
+  h3 { font-size: 1.45rem; font-weight: 600; line-height: 1.2; }
+  p { margin: 0; max-width: 62ch; }
+  a { color: var(--link); }
+  ul, ol { margin: 0; padding: 0; }
+  img, svg { max-width: 100%; }
+
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+
+  .skip { position: absolute; left: 1rem; top: -4rem; background: var(--accent); color: var(--on-accent); padding: .75rem 1rem; font-weight: 700; z-index: 100; border-radius: 8px; }
+  .skip:focus { top: calc(env(safe-area-inset-top, 0px) + .75rem); }
+
+  .wrap { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
+  .icon { width: 1.5em; height: 1.5em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+    min-height: 3.25rem; padding: .7rem 1.5rem;
+    border: 2px solid var(--btn-bg); border-radius: 999px;
+    background: var(--btn-bg); color: var(--btn-text);
+    font: 700 1.05rem/1.2 var(--body); text-decoration: none; cursor: pointer;
+    transition: transform .12s ease, background-color .12s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn--quiet { background: transparent; color: var(--text); border-color: var(--field-line); }
+  .btn--accent { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+  .btn--small { min-height: 2.75rem; padding: .5rem 1.1rem; font-size: 1rem; }
+
+  /* ---------- Header ---------- */
+  .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .site-header .wrap { display: flex; align-items: center; gap: .75rem 1.5rem; flex-wrap: wrap; padding-block: .7rem; }
+  .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--text); margin-right: auto; }
+  .brand-name { font-family: var(--display); font-weight: 800; font-size: 1.6rem; line-height: 1; letter-spacing: -0.02em; display: block; }
+  .brand-slogan { font-size: .85rem; color: var(--text-soft); display: block; margin-top: .2rem; }
+  .main-nav ul { list-style: none; display: flex; gap: .25rem; }
+  .main-nav a { display: block; padding: .55rem .8rem; color: var(--text); text-decoration: none; font-weight: 700; border-radius: 8px; white-space: nowrap; }
+  .main-nav a:hover { background: var(--bg-alt); text-decoration: underline; text-underline-offset: 4px; }
+  .header-tools { display: flex; gap: .5rem; align-items: center; }
+
+  .a11y-panel {
+    position: absolute; top: 100%; right: max(1.25rem, calc(50% - 580px));
+    width: min(24rem, calc(100vw - 2.5rem));
+    background: var(--bg); color: var(--text);
+    border: 1px solid var(--field-line); border-radius: 18px; padding: 1.25rem;
+    box-shadow: 0 16px 40px var(--shadow);
+    display: grid; gap: 1.1rem;
+  }
+  .a11y-panel[hidden] { display: none; }
+  .a11y-panel fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .a11y-panel legend { font-weight: 700; margin-bottom: .5rem; padding: 0; }
+  .seg { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .seg button, .chip {
+    font: 700 1rem/1.2 var(--body); color: var(--text); background: var(--bg);
+    border: 2px solid var(--field-line); border-radius: 999px; padding: .55rem 1rem; min-height: 2.75rem; cursor: pointer;
+  }
+  .seg button[aria-pressed="true"], .chip[aria-pressed="true"] { background: var(--btn-bg); color: var(--btn-text); border-color: var(--btn-bg); }
+  :root[data-theme="contrast"] .seg button[aria-pressed="true"], :root[data-theme="contrast"] .chip[aria-pressed="true"] { outline: 2px solid #fff; outline-offset: 2px; }
+
+  /* ---------- Hero ---------- */
+  .hero { background: var(--hero-bg); padding-block: clamp(2.5rem, 7vw, 5.5rem); }
+  .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  .hero .lede { font-size: 1.3rem; margin-top: 1.5rem; color: var(--text-soft); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 2rem; }
+
+  .picker {
+    position: relative;
+    background: var(--bg); border: 1px solid var(--line); border-radius: 26px;
+    padding: clamp(1.25rem, 3vw, 2rem); box-shadow: 0 16px 40px var(--shadow);
+  }
+  .sticker {
+    position: absolute; top: -1.15rem; right: 1.25rem; transform: rotate(4deg);
+    background: var(--accent); color: var(--on-accent);
+    border: 1px solid var(--text); border-radius: 999px; padding: .3rem 1rem;
+    font: 800 .95rem/1.2 var(--display); letter-spacing: -0.01em;
+  }
+  .picker h2 { font-size: 1.6rem; font-weight: 600; }
+  .picker .hint { color: var(--text-soft); margin-top: .35rem; font-size: 1rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.1rem; }
+  .chip { text-align: left; }
+  .result { margin-top: 1.4rem; padding-top: 1.3rem; border-top: 1px solid var(--line); animation: rise .28s ease; }
+  @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  .result h3 { font-size: 1.5rem; }
+  .result p { margin-top: .6rem; }
+  .result .example { margin-top: .9rem; padding: .85rem 1rem; background: var(--bg-alt); border-left: 6px solid var(--c3); border-radius: 4px 12px 12px 4px; font-size: 1rem; }
+  .result .btn { margin-top: 1.1rem; }
+
+  .stripe { display: flex; height: 12px; }
+  .stripe span:nth-child(1) { flex: 1; background: var(--c1); }
+  .stripe span:nth-child(2) { flex: 1; background: var(--c2); }
+  .stripe span:nth-child(3) { flex: 1; background: var(--c3); }
+  .stripe span:nth-child(4) { flex: 1; background: var(--c4); }
+
+  /* ---------- Sections ---------- */
+  .section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+  .section--alt { background: var(--bg-alt); }
+  .section-head { max-width: 46rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
+  .section-head p { margin-top: 1rem; color: var(--text-soft); font-size: 1.2rem; }
+
+  .mosaic { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .block { padding: clamp(1.5rem, 3vw, 2.25rem); border-radius: 26px; min-height: 15rem; color: var(--on-c); display: flex; flex-direction: column; gap: .8rem; }
+  .block h3 { font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 600; letter-spacing: -0.02em; }
+  .block p { font-size: 1.1rem; }
+  .block--1 { background: var(--c1); }
+  .block--2 { background: var(--c2); border-top-left-radius: 70px; }
+  .block--3 { background: var(--c3); border-bottom-right-radius: 70px; }
+  .block--4 { background: var(--c4); }
+
+  .services { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+  .services .section-head { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 6rem); margin-bottom: 0; }
+  .service-list { list-style: none; display: grid; }
+  .service-list li { display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; padding-block: 1.4rem; border-top: 1px solid var(--line); }
+  .service-list li:last-child { border-bottom: 1px solid var(--line); }
+  .service-list .icon { width: 2.4rem; height: 2.4rem; padding: .55rem; background: var(--accent); color: var(--on-accent); border-radius: 50%; stroke-width: 2; box-sizing: content-box; padding: .5rem; }
+  .service-list h3 { font-size: 1.3rem; }
+  .service-list p { margin-top: .3rem; color: var(--text-soft); }
+
+  .band { background: var(--band); color: var(--on-band); }
+  .band .section-head p { color: var(--on-band-soft); }
+  .steps { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.75rem; counter-reset: step; }
+  .steps li { counter-increment: step; position: relative; }
+  .steps li::before {
+    content: counter(step); display: grid; place-items: center;
+    width: 3rem; height: 3rem; border-radius: 50%;
+    background: var(--accent); color: var(--on-accent);
+    font: 800 1.35rem/1 var(--display); margin-bottom: 1rem;
+  }
+  .steps li:not(:last-child)::after { content: ""; position: absolute; top: 1.5rem; left: 3.6rem; right: -1rem; border-top: 2px dashed var(--on-band-soft); opacity: .6; }
+  .steps h3 { font-size: 1.3rem; }
+  .steps p { margin-top: .5rem; color: var(--on-band-soft); font-size: 1rem; }
+  :root[data-theme="contrast"] .band { border-block: 2px solid #fff; }
+
+  .promises { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
+  .promises > div { padding: 2rem 2rem 2rem 0; border-bottom: 1px solid var(--line); }
+  .promises > div:nth-child(odd) { border-right: 1px solid var(--line); }
+  .promises > div:nth-child(even) { padding-left: 2rem; padding-right: 0; }
+  .promises h3 { font-size: 1.9rem; font-weight: 600; letter-spacing: -0.02em; }
+  .promises p { margin-top: .6rem; color: var(--text-soft); }
+
+  .easyread { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .easyread .section-head { margin-bottom: 0; }
+  .easyread .btn { margin-top: 1.5rem; }
+  .er-list { list-style: none; display: grid; gap: .9rem; }
+  .er-list li { display: flex; align-items: center; gap: 1.25rem; background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 1rem 1.4rem; font-size: 1.4rem; font-weight: 700; line-height: 1.3; }
+  .er-list .icon { width: 2.6rem; height: 2.6rem; stroke-width: 1.7; }
+  .er-list li:nth-child(1) .icon { color: var(--text); }
+
+  .skills-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; }
+  .skills-grid li { display: flex; align-items: flex-start; gap: .75rem; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.15rem; font-weight: 700; font-size: 1.05rem; line-height: 1.35; }
+  .skills-grid .icon { width: 1.4rem; height: 1.4rem; margin-top: .1rem; color: var(--btn-bg); flex: none; }
+  .skills-grid li:last-child { grid-column: span 2; }
+
+  .contact { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+  .contact-ways { list-style: none; display: grid; gap: 1rem; margin-top: 2rem; }
+  .contact-ways li { display: flex; gap: .9rem; align-items: flex-start; }
+  .contact-ways .icon { margin-top: .15rem; }
+  .contact-ways strong { display: block; }
+  .contact-ways a { color: var(--text); font-weight: 700; }
+  .form { background: var(--bg-alt); border: 1px solid var(--line); border-radius: 26px; padding: clamp(1.25rem, 3vw, 2.25rem); display: grid; gap: 1.15rem; }
+  .field { display: grid; gap: .4rem; }
+  .field label { font-weight: 700; }
+  .field small { color: var(--text-soft); font-size: .95rem; }
+  .field input, .field select, .field textarea {
+    width: 100%; font: 400 1.1rem/1.4 var(--body); color: var(--text); background: var(--field);
+    border: 2px solid var(--field-line); border-radius: 12px; padding: .8rem 1rem; min-height: 3.25rem;
+  }
+  .field textarea { min-height: 8rem; resize: vertical; }
+  .form-status { min-height: 1.5rem; font-weight: 700; }
+
+  .site-footer { background: var(--band); color: var(--on-band); padding-block: 2.5rem; border-top: 1px solid var(--line); }
+  .site-footer .wrap { display: flex; flex-wrap: wrap; gap: 1.25rem 3rem; justify-content: space-between; align-items: center; }
+  .site-footer .brand { color: var(--on-band); }
+  .site-footer .brand-slogan { color: var(--on-band-soft); }
+  .site-footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+  .site-footer a { color: var(--on-band); }
+  .site-footer small { color: var(--on-band-soft); font-size: .95rem; display: block; width: 100%; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .main-nav { order: 3; width: 100%; overflow-x: auto; margin-inline: -.25rem; padding-bottom: .15rem; }
+    .hero-grid, .services, .easyread, .contact { grid-template-columns: 1fr; }
+    .services .section-head { position: static; }
+    .steps { grid-template-columns: 1fr; gap: 1.6rem; }
+    .steps li { display: grid; grid-template-columns: 3rem 1fr; column-gap: 1.1rem; }
+    .steps li::before { grid-row: span 2; margin-bottom: 0; }
+    .steps li:not(:last-child)::after { display: none; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .skills-grid li:last-child { grid-column: span 2; }
+  }
+  @media (max-width: 680px) {
+    body { font-size: 1.05rem; }
+    .mosaic, .promises { grid-template-columns: 1fr; }
+    .promises > div, .promises > div:nth-child(even), .promises > div:nth-child(odd) { padding: 1.6rem 0; border-right: 0; }
+    .block--2 { border-top-left-radius: 50px; }
+    .block--3 { border-bottom-right-radius: 50px; }
+    .brand-slogan { font-size: .8rem; }
+    .er-list li { font-size: 1.2rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .skills-grid li:last-child { grid-column: auto; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17.5 14.2c2.5.3 4 2.2 4 5.3"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5c3-1 6-1 8 1 2-2 5-2 8-1v13c-3-1-6-1-8 1-2-2-5-2-8-1z"/><path d="M12 6v13"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></symbol>
+    <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.8"/><path d="M5 8.5h14M12 8.5v5M12 13.5l-3.5 6.5M12 13.5l3.5 6.5"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Alliance Care Group, Care shaped around you. Back to top">
+      <svg width="36" height="36" viewBox="0 0 32 32" aria-hidden="true"><g stroke="var(--text)" stroke-width="1.5"><rect x="2" y="18" width="7" height="12" rx="2" fill="var(--c1)"/><rect x="12.5" y="11" width="7" height="19" rx="2" fill="var(--c2)"/><rect x="23" y="3" width="7" height="27" rx="2" fill="var(--c3)"/></g></svg>
+      <span><span class="brand-name">Alliance Care Group</span><span class="brand-slogan">Care shaped around you</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="#supported-living">Supported living</a></li>
+        <li><a href="#support">Who we support</a></li>
+        <li><a href="#services">Support areas</a></li>
+        <li><a href="#how">Getting started</a></li>
+        <li><a href="#promise">Our promise</a></li>
+        <li><a href="#easyread">Easy read</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <button class="btn btn--quiet btn--small" id="a11y-toggle" type="button" aria-expanded="false" aria-controls="a11y-panel">
+        <svg class="icon" aria-hidden="true"><use href="#i-access"/></svg> Accessibility
+      </button>
+      <a class="btn btn--small" href="#contact">Contact us</a>
+    </div>
+    <div class="a11y-panel" id="a11y-panel" role="region" aria-label="Accessibility settings" hidden>
+      <fieldset>
+        <legend>Text size</legend>
+        <div class="seg">
+          <button type="button" data-set-size="1" aria-pressed="true">Standard</button>
+          <button type="button" data-set-size="2" aria-pressed="false">Large</button>
+          <button type="button" data-set-size="3" aria-pressed="false">Extra large</button>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Colours</legend>
+        <div class="seg">
+          <button type="button" data-set-theme="auto" aria-pressed="true">Match my device</button>
+          <button type="button" data-set-theme="light" aria-pressed="false">Light</button>
+          <button type="button" data-set-theme="dark" aria-pressed="false">Dark</button>
+          <button type="button" data-set-theme="contrast" aria-pressed="false">High contrast</button>
+        </div>
+      </fieldset>
+      <button class="btn btn--quiet btn--small" type="button" id="a11y-reset">Reset settings</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Care shaped around you.</h1>
+        <p class="lede">Alliance Care Group supports people with learning disabilities, autism, physical disabilities and other disabilities, including supported living, to live the life they choose.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#contact">Talk to us</a>
+          <a class="btn btn--quiet" href="#supported-living">Explore supported living</a>
+        </div>
+      </div>
+
+      <div class="picker" aria-labelledby="picker-title">
+        <span class="sticker" aria-hidden="true">Care shaped around you</span>
+        <h2 id="picker-title">What would you like to achieve?</h2>
+        <p class="hint">Choose one to see what support could look like.</p>
+        <div class="chips" id="chips" role="group" aria-label="Outcomes"></div>
+        <div class="result" id="result" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+  <div class="stripe" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+  <section class="section" id="supported-living">
+    <div class="wrap services">
+      <div class="section-head">
+        <h2>Supported living</h2>
+        <p>Your own front door, your own tenancy, and support built around how you want to live. Supported living is not a care home: it's your home, with the right level of help to make it work for you.</p>
+        <p style="margin-top:1.5rem"><a class="btn" href="#contact">Ask about supported living</a></p>
+      </div>
+      <ul class="service-list">
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-key"/></svg>
+          <div><h3>Your own tenancy</h3><p>You hold your own tenancy or licence agreement, so the home is yours, not ours. You choose how it's decorated and who visits.</p></div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>
+          <div><h3>Support that flexes with you</h3><p>From a few visits a week to round-the-clock support, the hours and type of help are built around your needs and can change as your life does.</p></div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>
+          <div><h3>Shared or individual homes</h3><p>Live alone, with a partner, or share with housemates you get on with. We help you find a setting that suits you.</p></div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg>
+          <div><h3>Staying connected</h3><p>Support to keep in touch with family and friends, get out into the community, and build the routine you want.</p></div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+          <div><h3>Moving in, made easier</h3><p>We help with finding a property, benefits and paperwork, and settling in, so the move itself feels manageable.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="support">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Support for you, not a label</h2>
+        <p>Every person is different. We start by listening to who you are and what matters to you, then build support around that.</p>
+      </div>
+      <div class="mosaic">
+        <article class="block block--1">
+          <h3>Learning disabilities</h3>
+          <p>Support to make your own choices, learn everyday skills and take part in the things you enjoy. Information in the way that works for you, including easy read and pictures.</p>
+        </article>
+        <article class="block block--2">
+          <h3>Autism</h3>
+          <p>Calm, predictable support that respects how you experience the world. We plan around your routines, sensory needs and how you like to communicate.</p>
+        </article>
+        <article class="block block--3">
+          <h3>Physical disabilities</h3>
+          <p>Practical help at home and out in the community, from personal care to getting around, so you can do more on your own terms.</p>
+        </article>
+        <article class="block block--4">
+          <h3>Other disabilities</h3>
+          <p>This includes sensory impairments and long-term conditions. If you are not sure whether we are the right fit, get in touch. We will listen and help you find the right support.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What support can include</h2>
+        <p>Every plan is different. Support is built around the skills and goals that matter to you, and can flex or reduce over time as you build confidence.</p>
+        <p style="margin-top:1.5rem"><a class="btn" href="#contact">Ask about support</a></p>
+      </div>
+      <ul class="skills-grid">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Cooking and meal planning</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Money management</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Laundry and household skills</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Safe travel and public transport</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Appointments and healthcare</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Personal care</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Online safety</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Relationships and boundaries</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Community participation</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>College, volunteering and employment</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Preparing for less intensive support where appropriate</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section band" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Getting started is simple</h2>
+        <p>You do not need a diagnosis letter or a perfect plan. Just say hello.</p>
+      </div>
+      <ol class="steps" role="list">
+        <li><h3>Say hello</h3><p>Call, email or use the form. You, a family member or a professional can get in touch.</p></li>
+        <li><h3>We listen</h3><p>We meet you where you feel comfortable and ask what matters to you.</p></li>
+        <li><h3>We plan together</h3><p>Your goals and preferences go into a plan written in a way you understand.</p></li>
+        <li><h3>Support begins</h3><p>Your support starts, at the pace you choose.</p></li>
+        <li><h3>We keep checking in</h3><p>Regular reviews make sure the plan keeps up with you.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="promise">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What you can expect from us</h2>
+      </div>
+      <div class="promises">
+        <div><h3>We listen first</h3><p>Every plan begins with what you want, not with what a form asks for.</p></div>
+        <div><h3>You make the choices</h3><p>We give you clear options and respect the decisions you make.</p></div>
+        <div><h3>We communicate your way</h3><p>Easy read, pictures, plain words, calls or texts. Whatever works best for you.</p></div>
+        <div><h3>We keep improving with you</h3><p>We review your support regularly, and it is easy to tell us when something is not right.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="easyread">
+    <div class="wrap easyread">
+      <div class="section-head">
+        <h2>About us in easy read</h2>
+        <p>Short sentences and pictures, for anyone who prefers information this way.</p>
+        <button class="btn btn--quiet" type="button" id="listen" hidden>
+          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> <span id="listen-label">Listen to this</span>
+        </button>
+      </div>
+      <ul class="er-list" id="er-list">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span>We are Alliance Care Group.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span>We help people with disabilities.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>You choose what you want to do.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>We help you to do it.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>Call us or send an email. We will listen.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2>Let's talk about what you want to achieve</h2>
+        <p style="margin-top:1rem;color:var(--text-soft);font-size:1.2rem">Get in touch for yourself, for someone you care for, or as a professional making a referral. There is no pressure and no wrong question.</p>
+        <ul class="contact-ways">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><div><strong>Call us</strong><a href="tel:00000000000">0000 000 0000</a></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><div><strong>Email us</strong><a href="mailto:hello@alliancecaregroup.example">hello@alliancecaregroup.example</a></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><div><strong>Tell us how you like to be contacted</strong>Phone, email, text or a visit. We will reply your way.</div></li>
+        </ul>
+      </div>
+
+      <form class="form" id="enquiry" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-reach">Phone number or email</label>
+          <input id="f-reach" name="reach" type="text" autocomplete="off" required>
+        </div>
+        <div class="field">
+          <label for="f-who">Who is the support for?</label>
+          <select id="f-who" name="who">
+            <option>Me</option>
+            <option>Someone I care for</option>
+            <option>Someone I work with (professional referral)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-topic">What would you like to achieve?</label>
+          <select id="f-topic" name="topic">
+            <option>Moving into supported living</option>
+            <option>Living more independently</option>
+            <option>Getting out and meeting people</option>
+            <option>Learning something new</option>
+            <option>Finding work or volunteering</option>
+            <option>Looking after my health</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-message">Anything else you would like us to know?</label>
+          <small>Optional. Share as much or as little as you like.</small>
+          <textarea id="f-message" name="message"></textarea>
+        </div>
+        <button class="btn" type="submit">Email us this enquiry</button>
+        <p class="form-status" id="form-status" role="status" style="max-width:none"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="brand">
+      <svg width="36" height="36" viewBox="0 0 32 32" aria-hidden="true"><g stroke="var(--text)" stroke-width="1.5"><rect x="2" y="18" width="7" height="12" rx="2" fill="var(--c1)"/><rect x="12.5" y="11" width="7" height="19" rx="2" fill="var(--c2)"/><rect x="23" y="3" width="7" height="27" rx="2" fill="var(--c3)"/></g></svg>
+      <span><span class="brand-name">Alliance Care Group</span><span class="brand-slogan">Care shaped around you</span></span>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="#supported-living">Supported living</a></li>
+        <li><a href="#support">Who we support</a></li>
+        <li><a href="#services">Support areas</a></li>
+        <li><a href="#how">Getting started</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <small>&copy; 2026 Alliance Care Group. All rights reserved.</small>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var EMAIL = 'hello@alliancecaregroup.example';
+  var KEY = 'ayo-care-prefs';
+  var prefs = { theme: 'auto', size: '1' };
+
+  /* ----- Accessibility preferences ----- */
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if (saved) { prefs.theme = saved.theme || 'auto'; prefs.size = saved.size || '1'; }
+  } catch (e) {}
+
+  function applyPrefs() {
+    if (prefs.theme === 'auto') { root.removeAttribute('data-theme'); } else { root.setAttribute('data-theme', prefs.theme); }
+    root.setAttribute('data-size', prefs.size);
+    document.querySelectorAll('[data-set-theme]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set-theme') === prefs.theme)); });
+    document.querySelectorAll('[data-set-size]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set-size') === prefs.size)); });
+  }
+  function savePrefs() { try { localStorage.setItem(KEY, JSON.stringify(prefs)); } catch (e) {} }
+
+  document.querySelectorAll('[data-set-theme]').forEach(function (b) {
+    b.addEventListener('click', function () { prefs.theme = b.getAttribute('data-set-theme'); applyPrefs(); savePrefs(); });
+  });
+  document.querySelectorAll('[data-set-size]').forEach(function (b) {
+    b.addEventListener('click', function () { prefs.size = b.getAttribute('data-set-size'); applyPrefs(); savePrefs(); });
+  });
+  document.getElementById('a11y-reset').addEventListener('click', function () { prefs = { theme: 'auto', size: '1' }; applyPrefs(); savePrefs(); });
+
+  var toggle = document.getElementById('a11y-toggle');
+  var panel = document.getElementById('a11y-panel');
+  function setPanel(open) { panel.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); }
+  toggle.addEventListener('click', function () { setPanel(panel.hidden); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) { setPanel(false); toggle.focus(); } });
+  document.addEventListener('click', function (e) { if (!panel.hidden && !panel.contains(e.target) && !toggle.contains(e.target)) setPanel(false); });
+  applyPrefs();
+
+  /* ----- Outcome picker ----- */
+  var outcomes = [
+    { label: 'Move into supported living', topic: 'Moving into supported living', title: 'A place of your own, with support around you',
+      text: 'We help you find and settle into your own tenancy, with support built around your needs, from a few visits a week to round-the-clock care.',
+      example: 'Example: moving into your own flat with a support worker helping you settle in and build your routine.' },
+    { label: 'Live more independently', topic: 'Living more independently', title: 'Everyday skills for your own home',
+      text: 'We help with everyday things like cooking, laundry and managing money in your own tenancy, so you can do more for yourself over time.',
+      example: 'Example: learning to cook three meals you love, with someone beside you until you are ready to go solo.' },
+    { label: 'Get out and meet people', topic: 'Getting out and meeting people', title: 'Friends, clubs and places you love',
+      text: 'We go with you to the things you enjoy, or help you find new ones, so you feel part of your local community.',
+      example: 'Example: joining a weekly art class and getting there on your own by bus.' },
+    { label: 'Learn something new', topic: 'Learning something new', title: 'Skills for the life you want',
+      text: 'From using public transport to handling money or getting comfortable with technology, we break it into steps that suit you.',
+      example: 'Example: planning a trip to the shops and making it by yourself for the first time.' },
+    { label: 'Find work or volunteer', topic: 'Finding work or volunteering', title: 'A role that suits you',
+      text: 'We help you work out what you would enjoy, build up to it, and support you with applications, interviews and settling in.',
+      example: 'Example: a two-morning-a-week volunteering placement at a local cafe.' },
+    { label: 'Look after my health', topic: 'Looking after my health', title: 'Feeling well, day to day',
+      text: 'Support with appointments, staying active and healthy routines, always with dignity and on your terms.',
+      example: 'Example: going to the doctor with someone who helps you say what you need to say.' }
+  ];
+  var chips = document.getElementById('chips');
+  var result = document.getElementById('result');
+  var topicSelect = document.getElementById('f-topic');
+
+  function show(i) {
+    var o = outcomes[i];
+    chips.querySelectorAll('.chip').forEach(function (c, idx) { c.setAttribute('aria-pressed', String(idx === i)); });
+    result.innerHTML = '';
+    result.style.animation = 'none'; void result.offsetWidth; result.style.animation = '';
+    var h = document.createElement('h3'); h.textContent = o.title;
+    var p = document.createElement('p'); p.textContent = o.text;
+    var ex = document.createElement('p'); ex.className = 'example'; ex.textContent = o.example;
+    var a = document.createElement('a'); a.className = 'btn btn--small'; a.href = '#contact'; a.textContent = 'Talk to us about this';
+    a.addEventListener('click', function () { topicSelect.value = o.topic; });
+    result.appendChild(h); result.appendChild(p); result.appendChild(ex); result.appendChild(a);
+  }
+  outcomes.forEach(function (o, i) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.textContent = o.label; b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', function () { show(i); });
+    chips.appendChild(b);
+  });
+  show(0);
+
+  /* ----- Read aloud (easy read) ----- */
+  var listen = document.getElementById('listen');
+  var listenLabel = document.getElementById('listen-label');
+  if ('speechSynthesis' in window && 'SpeechSynthesisUtterance' in window) {
+    listen.hidden = false;
+    listen.addEventListener('click', function () {
+      if (window.speechSynthesis.speaking) { window.speechSynthesis.cancel(); listenLabel.textContent = 'Listen to this'; return; }
+      var text = Array.prototype.map.call(document.querySelectorAll('#er-list li'), function (li) { return li.textContent.trim(); }).join(' ');
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-GB'; u.rate = 0.9;
+      u.onend = u.onerror = function () { listenLabel.textContent = 'Listen to this'; };
+      listenLabel.textContent = 'Stop listening';
+      window.speechSynthesis.speak(u);
+    });
+  }
+
+  /* ----- Enquiry form (opens the visitor's email app) ----- */
+  var form = document.getElementById('enquiry');
+  var status = document.getElementById('form-status');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = form.elements.name.value.trim();
+    var reach = form.elements.reach.value.trim();
+    if (!name || !reach) { status.textContent = 'Please add your name and a phone number or email so we can reply.'; return; }
+    var body = 'Name: ' + name + '\nBest way to reach me: ' + reach +
+      '\nSupport is for: ' + form.elements.who.value +
+      '\nI would like to achieve: ' + form.elements.topic.value +
+      '\n\n' + form.elements.message.value;
+    status.textContent = 'Your email app should open with your message ready to send. If it does not, please email ' + EMAIL + '.';
+    window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Enquiry from the Alliance Care Group website') + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
